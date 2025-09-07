@@ -1,4 +1,4 @@
 agno 
 streamlit 
 python-dotenv 
-
+google-genai
