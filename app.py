@@ -80,7 +80,7 @@ if prompt := st.chat_input("💬 Ask me anything..."):
         for chunk in response.content.split():
             full_response += chunk + " "
             message_placeholder.markdown(
-                full_response + "<span style='color:#fc4503;'>▌</span>",
+                full_response + "<span style='color:#05fc3f;'>▌</span>",
                 unsafe_allow_html=True
             )
             time.sleep(0.05)
