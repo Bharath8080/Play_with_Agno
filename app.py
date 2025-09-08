@@ -76,12 +76,17 @@ if prompt := st.chat_input("💬 Ask me anything..."):
         response = agent.run(prompt)
 
         # Simulate streaming typing
+                
         for chunk in response.content.split():
             full_response += chunk + " "
-            message_placeholder.markdown(full_response + "▌")
+            message_placeholder.markdown(
+                full_response + "<span style='color:#fc4503;'>▌</span>",
+                unsafe_allow_html=True
+            )
             time.sleep(0.05)
 
         message_placeholder.markdown(full_response)
+
 
         # 🔊 Speak the response with Edge TTS
         wav_file = edge_tts_sync(full_response, voice="en-US-JessaNeural")
