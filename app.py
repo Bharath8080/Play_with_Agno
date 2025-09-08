@@ -1,4 +1,4 @@
-# pip install agno streamlit python-dotenv 
+# pip install agno streamlit python-dotenv edge-tts
 
 import os
 import streamlit as st
@@ -7,12 +7,18 @@ from agno.agent import Agent
 from agno.models.google import Gemini
 from textwrap import dedent
 import time
+import asyncio
+import edge_tts
 
 load_dotenv()
 
 # Streamlit UI setup
 st.set_page_config(page_title="Agno", page_icon="👾", layout="centered")
-st.markdown("<h1><span style='color: #fc4503;'> 👻 Agno </span><span style='color: #0313fc;'>Gemini</span> Chatbot<img src='https://logos-world.net/wp-content/uploads/2025/01/Bard-Logo-2023.png' width='70'></h1>", unsafe_allow_html=True)
+st.markdown(
+    "<h1><span style='color: #fc4503;'> ⚡ Agno </span><span style='color: #0313fc;'>Gemini</span> Chatbot"
+    "<img src='https://logos-world.net/wp-content/uploads/2025/01/Bard-Logo-2023.png' width='70'></h1>",
+    unsafe_allow_html=True,
+)
 
 # Sidebar - Model selection
 st.sidebar.header("⚙️ Settings")
@@ -40,6 +46,11 @@ for msg in st.session_state.messages:
     with st.chat_message(msg["role"]):
         st.markdown(msg["content"])
 
+# Function: Play voice with Edge TTS (Jessa Neural)
+async def speak_text(text: str):
+    communicate = edge_tts.Communicate(text, voice="en-US-JessaNeural")
+    await communicate.stream_async()
+
 # User input
 if prompt := st.chat_input("💬 Ask me anything..."):
     # Save user message
@@ -65,3 +76,6 @@ if prompt := st.chat_input("💬 Ask me anything..."):
 
     # Save assistant message
     st.session_state.messages.append({"role": "assistant", "content": full_response})
+
+    # Speak final response (Edge TTS - Jessa Neural)
+    asyncio.run(speak_text(full_response))
