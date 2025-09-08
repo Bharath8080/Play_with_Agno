@@ -28,7 +28,7 @@ def edge_tts_sync(text, voice="en-US-JessaNeural", file_name="output.wav"):
 # ----------------------------
 # 🌐 Streamlit UI setup
 # ----------------------------
-st.set_page_config(page_title="Agno", page_icon="👾", layout="centered")
+st.set_page_config(page_title="Agno", page_icon="🪅", layout="centered")
 st.markdown(
     "<h1><span style='color: #fc4503;'>⚡Agno </span><span style='color: #0313fc;'>Gemini</span> Chatbot<img src='https://logos-world.net/wp-content/uploads/2025/01/Bard-Logo-2023.png' width='70'></h1>",
     unsafe_allow_html=True,
@@ -80,7 +80,7 @@ if prompt := st.chat_input("💬 Ask me anything..."):
         for chunk in response.content.split():
             full_response += chunk + " "
             message_placeholder.markdown(
-                full_response + "<span style='color:#05fc3f;'>⚡</span>",
+                full_response + "<span style='color:#05fc3f;'> ▌</span>",
                 unsafe_allow_html=True
             )
             time.sleep(0.05)
