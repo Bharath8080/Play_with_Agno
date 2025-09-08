@@ -30,7 +30,7 @@ def edge_tts_sync(text, voice="en-US-JessaNeural", file_name="output.wav"):
 # ----------------------------
 st.set_page_config(page_title="Agno", page_icon="👾", layout="centered")
 st.markdown(
-    "<h1><span style='color: #fc4503;'> 👻 Agno </span><span style='color: #0313fc;'>Gemini</span> Chatbot<img src='https://logos-world.net/wp-content/uploads/2025/01/Bard-Logo-2023.png' width='70'></h1>",
+    "<h1><span style='color: #fc4503;'>⚡Agno </span><span style='color: #0313fc;'>Gemini</span> Chatbot<img src='https://logos-world.net/wp-content/uploads/2025/01/Bard-Logo-2023.png' width='70'></h1>",
     unsafe_allow_html=True,
 )
 
