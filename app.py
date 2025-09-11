@@ -46,7 +46,7 @@ model_choice = st.sidebar.selectbox(
 # Initialize agent
 agent = Agent(
     model=Gemini(id=model_choice, api_key=os.getenv("GEMINI_API_KEY"), search=True),
-    show_tool_calls=True,
+    #show_tool_calls=True,
     description=dedent("""You are a helpful assistant with access to web search via Google Search API."""), 
     instructions=dedent("""Use the web search tool to answer user queries."""), 
     markdown=True,
