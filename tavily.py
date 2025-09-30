@@ -7,7 +7,6 @@ import asyncio
 from dotenv import load_dotenv
 from agno.agent import Agent
 from agno.models.cerebras import CerebrasOpenAI
-
 from agno.tools.mcp import MCPTools
 
 load_dotenv()
@@ -18,15 +17,14 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-st.sidebar.header("⚙️ Settings")
+st.sidebar.header("⚙ Settings")
 model_choice = st.sidebar.selectbox(
     "Choose Model",
-    ["gpt-oss-120b","qwen-3-235b-a22b-instruct-2507"],
+    ["gpt-oss-120b", "qwen-3-235b-a22b-instruct-2507"],
     index=0
 )
 
 server_url = f"https://mcp.tavily.com/mcp/?tavilyApiKey={os.getenv('TAVILY_API_KEY')}"
-
 
 if "messages" not in st.session_state:
     st.session_state.messages = []
