@@ -6,3 +6,4 @@ google-genai
 pyttsx3 
 edge-tts
 cerebras-cloud-sdk
+openai
