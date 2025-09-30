@@ -21,7 +21,7 @@ st.markdown(
 st.sidebar.header("⚙️ Settings")
 model_choice = st.sidebar.selectbox(
     "Choose Model",
-    ["gpt-oss-120b"],
+    ["gpt-oss-120b","qwen-3-235b-a22b-instruct-2507"],
     index=0
 )
 
