@@ -25,7 +25,8 @@ model_choice = st.sidebar.selectbox(
     index=0
 )
 
-server_url = "https://mcp.tavily.com/mcp/?tavilyApiKey=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"
+server_url = f"https://mcp.tavily.com/mcp/?tavilyApiKey={os.getenv('TAVILY_API_KEY')}"
+
 
 if "messages" not in st.session_state:
     st.session_state.messages = []
