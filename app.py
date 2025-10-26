@@ -13,10 +13,18 @@ load_dotenv()
 # ----------------------------
 st.set_page_config(page_title="Agno", page_icon="🪅", layout="centered")
 st.markdown(
-    "<h3><span style='color: #fc4503;'>⚡Agno </span><span style='color: #0313fc;'>Gemini</span> Chatbot"
-    "<img src='https://logos-world.net/wp-content/uploads/2025/01/Bard-Logo-2023.png' width='50'></h3>",
+    """
+    <div style='text-align: center;'>
+        <h3>
+            <span style='color: #fc4503;'>⚡Agno </span>
+            <span style='color: #0313fc;'>Gemini</span> Chatbot
+            <img src='https://logos-world.net/wp-content/uploads/2025/01/Bard-Logo-2023.png' width='50'>
+        </h3>
+    </div>
+    """,
     unsafe_allow_html=True,
 )
+
 
 # Sidebar - Model selection
 st.sidebar.header("⚙️ Settings")
